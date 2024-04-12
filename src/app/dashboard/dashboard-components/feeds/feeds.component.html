@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Archived Users</h4>
+        <h5 class="card-subtitle">Widget you can use</h5>
+        <div class="feed-widget mt-4">
+            <ul class="list-unstyled feed-body m-0">
+                <li class="feed-item d-flex align-items-center mb-3" *ngFor='let feed of users'>
+                    <div class="feed-icon round round-sm text-white d-flex align-items-center justify-content-center rounded-circle ">
+                        <img src="{{feed.image}}" alt="Feed Icon" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 50%;">
+                    </div>
+                    <h5 class="mb-0 fw-normal ms-3">{{feed.username}}</h5>
+                    <span class="ms-auto fs-2"> {{feed.age}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

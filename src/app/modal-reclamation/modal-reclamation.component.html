@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Claim Details</title>
+	<!-- Add Bootstrap CSS and Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+		/* Custom styles */
+		.card-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.2rem;
+			font-weight: bold;
+			background-color: #f8f9fa !important;
+			border: none !important;
+			border-radius: 0;
+		}
+		.card-header img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		.card-header .user1 {
+			text-align: left;
+		}
+		.card-header .user2 {
+			text-align: right;
+		}
+		.status {
+			font-size: 1.5rem;
+			margin-top: 20px;
+			margin-bottom: 0;
+			text-align: center;
+		}
+		.card-body {
+			font-size: 1.2rem;
+			line-height: 1.5;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 30px;
+			background-color: #f8f9fa;
+			border: none !important;
+			border-radius: 0;
+		}
+		.card-body h5 {
+			font-weight: bold;
+			margin-top: 0;
+		}
+				.green {
+		background-color: green;
+		}
+
+		.red {
+		background-color: red;
+		}
+		.emoji {
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Apple Color Emoji", "EmojiOne", "Android Emoji", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .size-thead {
+  font-size: 15px;
+}
+.add-line {
+	border-bottom: 1px solid black;
+	width: 100%;
+}
+
+	</style>
+</head>
+<meta charset="UTF-8">
+<body>
+	<div class="container-fluid p-0">
+		<div class="card">
+			<div class="card-header">
+				<div class="user1">
+					<table 	class="add-line">
+					<thead >
+						<tr>
+							<th class="size-thead">Claimed User : </th>
+						</tr>
+					</thead>
+				</table>
+					<img src="assets/images/users/userperso.jpg" alt="User 1">
+					{{ claim.userrec.nom }} {{ claim.userrec.prenom }}
+				</div>
+
+				<div class="status">
+					<i class="fas fa-circle" [class.text-success]="claim.status" [class.text-danger]="!claim.status"></i> Status
+				  </div>
+				<div class="user2">
+					<table class="add-line">
+					<thead>
+						<tr>
+							<th class="size-thead">By</th>
+						</tr>
+					</thead>
+					</table>
+					<img src="assets/images/users/userperso.jpg" alt="User 2">
+					{{ claim.userarec.nom }} {{ claim.userarec.prenom }}
+	
+				</div>
+			
+			</div>
+			<div class="card-body">
+				<p><b>Object :</b>  {{ claim.object }}</p>
+				<p><b>Description :</b> {{ claim.description }}</p>
+					<p><b>Date :</b>  {{ claim.daterec | date:'yyyy-MM-dd' }}</p>
+					<div class="status2">
+						<button class="btn" [class.green]="claim.status" [class.red]="!claim.status" (click)="toggleStatus()">
+							{{ claim.status ? 'OPEN' : 'CLOSE' }}
+						</button>
+						<div>
+							<img src="assets/images/smile.png" alt="Smiling Emoji" style="width: 30px; height: 30px;"/>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Add Bootstrap JS and jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

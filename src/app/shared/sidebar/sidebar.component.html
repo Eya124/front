@@ -1,0 +1,42 @@
+<nav class="sidebar-nav">
+    <ul id="sidebarnav">
+        <!-- First level menu -->
+      <!--   <li class="sidebar-item" [class.active]="showMenu === sidebarnavItem.title" *ngFor="let sidebarnavItem of sidebarnavItems"
+            [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+            <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
+            <a class="sidebar-link waves-effect waves-dark" [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
+                [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;" (click)="addExpandClass(sidebarnavItem.title)"
+                [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+                <i [ngClass]="[sidebarnavItem.icon]"></i>
+                <span class="hide-menu">{{sidebarnavItem.title}}</span>
+            </a>
+        </li>-->
+        <li class="sidebar-item" [class.active]="showMenu === 'dashboard'">
+            <a class="sidebar-link waves-effect waves-dark" [routerLink]="['/dashboard']">
+              <i class="ti-info-alt"></i>
+              <span class="hide-menu">dashboard</span>
+            </a>
+          </li>
+        <li class="sidebar-item" [class.active]="showMenu === 'users'">
+            <a class="sidebar-link waves-effect waves-dark" [routerLink]="['/users']">
+              <i class="ti-info-alt"></i>
+              <span class="hide-menu">Users</span>
+            </a>
+          </li>
+        <li class="sidebar-item" [class.active]="showMenu === 'Detail Post'">
+          <a class="sidebar-link waves-effect waves-dark" [routerLink]="['/post/details']">
+            <i class="ti-info-alt"></i>
+            <span class="hide-menu">Detail Post</span>
+          </a>
+        </li>
+        <li class="sidebar-item" [class.active]="showMenu === 'Detail Post'">
+          <a class="sidebar-link waves-effect waves-dark" [routerLink]="['/listcentre']">
+            <i class="ti-info-alt"></i>
+            <span class="hide-menu">centre</span>
+          </a>
+        </li>
+        <li class="text-center p-3 upgrade-btn">
+            <a href="https://www.wrappixel.com/templates/elite-angular-admin/" class="btn d-block w-100 btn-danger">Upgrade to Pro</a>
+        </li>
+    </ul>
+</nav>

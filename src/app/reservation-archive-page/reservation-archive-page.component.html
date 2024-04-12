@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-12" >
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div  class="col-lg-12">
+                        <h3 class="mb-0 font-weight-bold">{{total}}</h3>
+                        <small class="card-subtitle fs-3">Total of my archived reservations</small>
+                        
+                          
+                              <ngb-alert type="danger" [dismissible]="false"
+                                ><strong>Whoa!</strong> Toutes les réservations seront automatiquement supprimées après 30 jours de la date de début de l'événement !</ngb-alert>
+                           
+                          
+                        <!-- Liste des événements existants -->
+                        <div class="card-body border-top">
+                            <p *ngFor="let event of appointmentsData;let i = index">
+                            
+                              <ngb-alert type="danger" [dismissible]="false" class="col-12 customize-alert fs-5">
+                                {{i+1}} : {{ event.text }} - {{ event.startDate | date }} à {{ event.endDate | date }}
+                              </ngb-alert>
+                            
+                            </p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

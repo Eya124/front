@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <!-- title -->
+                <h4 class="card-title">Claims</h4>
+                <h5 class="card-subtitle">Overview of the reports</h5>
+            
+        <!-- title -->
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">Claimed User</th>
+                        <th class="text-dark font-medium fs-4">Object</th>
+                        <th class="text-dark font-medium fs-4">Status</th>
+                        <th class="text-dark font-medium fs-4">Date</th>
+                        <th class="text-dark font-medium fs-4">Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let claim of claims'>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="assets/images/users/userperso.jpg" alt="user" width="45" class="rounded-circle">
+                                <div class="ms-3">
+                                    <h5 class="mb-0 font-medium">{{ claim.userrec.nom }} {{ claim.userrec.prenom }}</h5>
+                                    <span>{{ claim.userrec.adresse }}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fs-4">{{ claim.object }}</td>
+                        <td>
+                            <span class="rounded-circle d-inline-block"
+                            [class.bg-success]="claim.status"
+                            [style.background-color]="claim.status ? 'green' : 'red'"
+                            style="width: 20px; height: 20px; border-radius: 50%; margin-left: 10px;">
+                        </span>
+                        </td>
+                        
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{ claim.daterec | date:'yyyy-MM-dd' }}</h5>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" (click)="readRec(claim)">Read<i class="fa fa-plus ms-2"></i></button>
+                        </td>
+                    </tr>              
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

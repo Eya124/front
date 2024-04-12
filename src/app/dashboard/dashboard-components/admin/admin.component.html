@@ -1,0 +1,27 @@
+<!-- admin.component.html -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>Ajouter le rôle ADMIN</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <div class="input-group">
+                <input type="email" id="email" [(ngModel)]="email" class="form-control custom-input" required>
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-success" (click)="addAdminRole()">
+                    <i class="fas fa-user-shield"></i> Ajouter le rôle ADMIN
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

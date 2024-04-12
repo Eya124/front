@@ -1,0 +1,50 @@
+<section class="vh-100" style="background-color: #f3f5f7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-9 col-lg-7 col-xl-5">
+        <!-- Amélioration de la zone de recherche -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="searchName" placeholder="Rechercher un utilisateur" aria-label="Rechercher un utilisateur" aria-describedby="search-button" [(ngModel)]="searchValue">
+          <button class="btn btn-primary" type="button" (click)="searchUsers()">Rechercher</button>
+        </div>
+          <div class="card" style="border-radius: 15px;" *ngFor="let user of users">
+            <div class="card-body p-4">
+              <div class="d-flex text-black">
+                <div class="flex-shrink-0">
+                  <img src={{user.image}}
+                    alt="Generic placeholder image" class="img-fluid"
+                    style="width: 180px; border-radius: 10px;">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h5 class="mb-1">{{ user.nom }} {{ user.prenom }}</h5>
+                  <p class="mb-2 pb-1" style="color: #2b2a2a;">{{user.email}}</p>
+                  <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                    style="background-color: #efefef;">
+                    <div>
+                      <p class="small text-muted mb-1">Posts</p>
+                      <p class="mb-0">41</p>
+                    </div>
+                    <div class="px-3">
+                      <p class="small text-muted mb-1">Report</p>
+                      <p class="mb-0">{{user.nbrSignalement}}</p>
+                    </div>
+                    <div>
+                      <p class="small text-muted mb-1">Event</p>
+                      <p class="mb-0">{{user.evenements.length}}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex pt-1">
+                    <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Profile</button>
+                    <button type="button" (click)="addRec(user)" class="btn btn-primary flex-grow-1 btn-rouge">Report</button>
+                    <button type="button" class="btn btn-outline-primary me-1 flex-grow-1" (click)="viewUser(user.idUser)">Profile</button>               
+                         <button type="button" class="btn btn-primary flex-grow-1 btn-rouge">Report</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

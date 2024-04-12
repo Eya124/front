@@ -1,0 +1,46 @@
+<form #postForm="ngForm" (submit)="submitForm()" class="card p-4">
+  <div class="form-group">
+    <label for="linkpiecejointe">Lien de la pièce jointe</label>
+    <div class="input-group">
+      <input type="url"  accept="image/*" id="linkpiecejointe" name="linkpiecejointe" [(ngModel)]="post.linkpiecejointe" class="form-control bg-light" #linkpiecejointe="ngModel"/>
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button">Parcourir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="link">Lien</label>
+    <input type="text" class="form-control bg-light border border-secondary" id="link" [(ngModel)]="post.link" name="link" #link="ngModel" placeholder="ajouter le lien de l'adresse exacte"required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control bg-light border border-secondary" id="description" [(ngModel)]="post.description" name="description" #description="ngModel" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="adresse">Adresse</label>
+    <select type="text" class="form-control bg-light border border-secondary" id="adresse" [(ngModel)]="post.adresse" name="adresse" #adresse="ngModel" required>
+      <option  selected>Open this select menu</option>
+      <option value="Béja">Béja</option>
+      <option value="Bizert">Bizert</option>
+      <option value="Jendouba">Jendouba</option>
+      <option value="Kef">Kef</option>
+      <option value="Monastir">Monastir</option>
+      <option value="Nabeul">Nabeul</option>
+      <option value="Siliana">Siliana</option>
+      <option value="Sousse">Sousse</option>
+      <option value="Touzer">Touzer</option>
+      <option value="Tunis">Tunis</option>
+      <option value="Zaghouan">Zaghouan</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" class="form-control bg-light border border-secondary" id="date" [(ngModel)]="post.date" name="date" #date="ngModel" required>
+  </div>
+
+  <button [disabled]="postForm.invalid" type="submit" class="btn btn-success">Ajouter</button>
+</form>

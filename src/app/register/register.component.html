@@ -1,0 +1,177 @@
+
+<div class="header bg-gradient-danger py-7 py-lg-8">
+    <div class="container">
+      <div class="header-body text-center mb-7">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6">
+            <h1 class="text-white">Welcome!</h1>
+            <p class="text-lead text-light">Use these awesome forms to login or create a new account in your project for free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container mt--8 pb-5">
+    <!-- Table -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
+            <div class="text-center">
+              <a href="#" class="btn btn-neutral btn-icon mr-4">
+                <span class="btn-inner--icon"><img src="assets/images/icons/common/github.svg"></span>
+                <span class="btn-inner--text">Github</span>
+              </a>
+              <a href="#" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="assets/images/icons/common/google.svg"></span>
+                <span class="btn-inner--text">Google</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="text-center text-muted mb-4">
+              <small>Or sign up with credentials</small>
+            </div>
+            <form (submit)="register()">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="First Name" type="text" [(ngModel)]="prenom" name="prenom" required  name="first1">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Last Name" type="text" [(ngModel)]="nom" name="nom" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Phone Number" type="text" [(ngModel)]="telephone" name="telephone" required name="first2">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Age" type="number" [(ngModel)]="age" name="age" required name="first3">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Father's Name" type="text" [(ngModel)]="prenomPere" name="prenomPere" required name="first4">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Role Name" type="text" [(ngModel)]="roleName" name="roleName" required name="first5">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Address" type="text" [(ngModel)]="adresse" name="adresse" required name="first6">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Email" type="username" [(ngModel)]="username" name="email" name="first7">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-image"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Image URL" type="url" [(ngModel)]="image" name="image" name="firs">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Password" type="password" [(ngModel)]="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{9,}$" minlength="9" required #passwordInput="ngModel">
+                </div>
+                <div class="alert alert-danger" *ngIf="passwordInput.touched && passwordInput.invalid">
+                  <p *ngIf="passwordInput.errors.required">Password is required.</p>
+                  <p *ngIf="passwordInput.errors.minlength">Password must have at least 9 characters.</p>
+                  <p *ngIf="passwordInput.errors.pattern">Password must be complex and meet the criteria.</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Confirm Password" type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required #confirmPasswordInput="ngModel">
+                </div>
+                <div class="alert alert-danger" *ngIf="confirmPasswordInput.touched && confirmPasswordInput.invalid && confirmPassword !== password">
+                  <p *ngIf="confirmPasswordInput.errors.required">Confirm password is required.</p>
+                  <p *ngIf="confirmPassword !== password">Passwords do not match.</p>
+                </div>
+              </div>
+              
+  
+  
+              <div class="text-muted font-italic"><small>Password strength: <span class="text-success font-weight-700">strong</span></small></div>
+              <div class="row my-4">
+                <div class="col-12">
+                  <div class="custom-control custom-control-alternative custom-checkbox">
+                    <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                    <label class="custom-control-label" for="customCheckRegister">
+                      <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-4" [disabled]="!(prenom && nom && telephone && age && prenomPere && roleName && adresse && username && image && password )">Create account</button>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ... Autres champs existants ... -->
+  
+  
+  
+  
+  <!-- ... Autres champs existants ... -->
+  
+  
