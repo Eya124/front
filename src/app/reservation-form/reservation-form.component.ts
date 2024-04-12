@@ -68,7 +68,7 @@ export class ReservationFormComponent implements OnInit {
       })
     };*/
     console.log(headers);
-    this.httpClient.get<any[]>('http://localhost:10000/reservations',{ headers } ).subscribe(
+    this.httpClient.get<any[]>('http://localhost:9002/reservations',{ headers } ).subscribe(
       (response) => {
         // Filtrer les utilisateurs dont "désactiver" est false
         //console.log(response);
@@ -82,7 +82,7 @@ export class ReservationFormComponent implements OnInit {
     );
 
     // Ajoutez l'en-tête d'autorisation à la requête POST
-    this.httpClient.post('http://localhost:10000/reservations/res', registerDto, {headers} ).subscribe((response) => {
+    this.httpClient.post('http://localhost:9002/reservations/res', registerDto, {headers} ).subscribe((response) => {
       // Filtrer les utilisateurs dont "désactiver" est false
       //console.log(response);
 

@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   
   username: string;
   password: string;
-
+  
+  
   login() {
     const body = new HttpParams()
       .set('username', this.username)
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.http.post('http://localhost:9091/realms/Camping/protocol/openid-connect/token', body.toString(), { headers })
+    this.http.post('http://192.168.100.129:9091/realms/Camping/protocol/openid-connect/token', body.toString(), { headers })
       .subscribe((response: any) => {
         const token = response.access_token;
         console.log(response.token);
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           console.log(response.token);
 
           // Redirection vers user-profile
-          this.router.navigate(['/profile']);
+          this.router.navigate(['/reservation-form']);
         } else {
           console.log('Le token est vide');
         }
